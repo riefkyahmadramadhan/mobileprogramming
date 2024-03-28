@@ -1,6 +1,8 @@
 package org.d3if0142.mobpro1.ui.screen
 
 import android.content.res.Configuration
+import android.widget.Toast
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,6 +20,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -51,6 +54,7 @@ fun MainScreen() {
 fun ScreenContent(modifier: Modifier) {
     val viewModel: MainViewModel = viewModel()
     val data = viewModel.data
+    val context = LocalContext.current
 
     if (data.isEmpty()) {
         Column (
@@ -67,7 +71,10 @@ fun ScreenContent(modifier: Modifier) {
             modifier = modifier.fillMaxSize()
         ) {
             items(data) {
-                ListItem(catatan = it)
+                ListItem(catatan = it){
+                    val pesan = context.getString(R.string.x_diklik, it.judul)
+                    Toast.makeText(context, pesan, Toast.LENGTH_SHORT).show()
+                }
                 Divider()
             }
         }
@@ -75,10 +82,10 @@ fun ScreenContent(modifier: Modifier) {
 }
 
 @Composable
-fun ListItem(catatan: Catatan) {
+fun ListItem(catatan: Catatan, onClick: () -> Unit) {
     Column (
-        modifier = Modifier
-            .fillMaxWidth()
+        modifier = Modifier.fillMaxWidth()
+            .clickable { onClick() }
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ){

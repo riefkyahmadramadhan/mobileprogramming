@@ -4,4 +4,20 @@
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="copyright">Myfood adalah aplikasi catatan untuk mendokumentasikan makanan yang telah dimakan dalam satu hari, aplikasi ini dapat menghitung total kalori yang dimakan dalam satu hari sehingga dapat mengetahui apakah kalori tersebut kurang, cukup, atau berlebih</string>
     <string name="kembali">Kembali</string>
+    <string name="myfood_intro">Pantau apakah kalori Anda hari ini berlebihan atau tidak, cobalah di penghujung hari!</string>
+    <string name="umur">Umur</string>
+    <string name="pria">Pria</string>
+    <string name="wanita">Wanita</string>
+    <string name="makan_pagi">Makan Pagi</string>
+    <string name="makan_siang">Makan Siang</string>
+    <string name="makan_malam">Makan Malam</string>
+    <string name="hitung">Hitung</string>
+    <string name="kal_x">Kalori: %1$.2f</string>
+    <string name="kurang">Kamu kekurangan kalori</string>
+    <string name="ideal">Kalorimu cukup</string>
+    <string name="lebih">Kamu kelebihan kalori</string>
+    <string name="input_invalid">Tidak boleh kosong.</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="bagikan_template">Kalori: %1$s  Tinggi badan: %2$s cm Jenis kelamin: %3$s  BMI: %4$.2f %5$s</string>
+    <string name="unknown">Tidak diketahui</string>
 </resources>

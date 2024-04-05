@@ -3,4 +3,20 @@
     <string name="tentang_aplikasi">About App</string>
     <string name="copyright">Myfood is a record application for documenting the food you have eaten in one day, this application can calculate the total calories eaten in one day so you can find out whether the calories are insufficient, sufficient or excessive</string>
     <string name="kembali">Back</string>
+    <string name="myfood_intro">Monitor whether your calories today are excessive or not, try it at the end of the day!</string>
+    <string name="umur">Age</string>
+    <string name="pria">Male</string>
+    <string name="wanita">Female</string>
+    <string name="makan_pagi">Breakfast</string>
+    <string name="makan_siang">Lunch</string>
+    <string name="makan_malam">Dinner</string>
+    <string name="hitung">Count</string>
+    <string name="kal_x">Calories: %1$.2f</string>
+    <string name="kurang">You are calorie deficient</string>
+    <string name="ideal">You have enough calories</string>
+    <string name="lebih">You have excess calories</string>
+    <string name="input_invalid">Can not be empty.</string>
+    <string name="bagikan">Share</string>
+    <string name="bagikan_template">Calories: %1$s  Tinggi badan: %2$s cm Jenis kelamin: %3$s  BMI: %4$.2f %5$s</string>
+    <string name="unknown">Unkown</string>
 </resources>

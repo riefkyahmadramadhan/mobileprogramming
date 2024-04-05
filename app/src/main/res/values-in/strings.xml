@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Myfood - Makananku</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">Myfood adalah aplikasi catatan untuk mendokumentasikan makanan yang telah dimakan dalam satu hari, aplikasi ini dapat menghitung total kalori yang dimakan dalam satu hari sehingga dapat mengetahui apakah kalori tersebut kurang, cukup, atau berlebih</string>
+    <string name="kembali">Kembali</string>
+</resources>

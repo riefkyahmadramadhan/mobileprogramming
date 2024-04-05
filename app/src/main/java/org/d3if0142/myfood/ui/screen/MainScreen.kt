@@ -1,5 +1,6 @@
 package org.d3if0142.myfood.ui.screen
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -83,6 +84,7 @@ fun MainScreen(navController: NavHostController) {
     }
 }
 
+@SuppressLint("StringFormatMatches")
 @Composable
 fun ScreenContent(modifier: Modifier) {
     var umur by rememberSaveable { mutableStateOf("") }
@@ -231,8 +233,7 @@ fun ScreenContent(modifier: Modifier) {
                         shareData(
                             context = context,
                             message = context.getString(R.string.bagikan_template,
-                                umur, pagi, gender, kalori,
-                                context.getString(kategori).uppercase())
+                                umur, kalori.toString(), getKategori.toString())
                         )
                     },
                     modifier = Modifier.padding(top = 8.dp),

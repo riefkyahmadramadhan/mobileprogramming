@@ -230,10 +230,12 @@ fun ScreenContent(modifier: Modifier) {
                 )
                 Button(
                     onClick = {
+                        val umurInt = umur.toIntOrNull() ?: 0
+                        val kategoriStr = context.getString(getKategori(kalori, gender == radioOptions[0], umurInt))
                         shareData(
                             context = context,
                             message = context.getString(R.string.bagikan_template,
-                                umur, kalori.toString(), getKategori.toString())
+                                umur, kalori.toString(), kategoriStr)
                         )
                     },
                     modifier = Modifier.padding(top = 8.dp),

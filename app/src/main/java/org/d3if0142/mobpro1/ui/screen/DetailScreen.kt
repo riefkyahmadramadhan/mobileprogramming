@@ -31,6 +31,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import org.d3if0142.mobpro1.R
@@ -41,8 +42,16 @@ const val KEY_ID_CATATAN = "idCatatan"
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreen(navController: NavHostController, id: Long? = null) {
+    val viewModel: DetailViewModel = viewModel()
+
     var judul by remember { mutableStateOf("") }
     var catatan by remember { mutableStateOf("") }
+
+    if (id != null){
+        val data = viewModel.getCatatan(id)
+        judul = data.judul
+        catatan = data.catatan
+    }
     Scaffold (
         topBar = {
             TopAppBar(

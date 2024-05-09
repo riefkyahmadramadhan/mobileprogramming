@@ -33,14 +33,17 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import org.d3if0142.mobpro1.R
 import org.d3if0142.mobpro1.model.Catatan
+import org.d3if0142.mobpro1.navigation.Screen
 import org.d3if0142.mobpro1.ui.theme.Mobpro1Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
-    val context = LocalContext.current
+fun MainScreen(navController: NavHostController) {
 
     Scaffold(
         topBar = {
@@ -55,7 +58,7 @@ fun MainScreen() {
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    Toast.makeText(context, R.string.tambah_error, Toast.LENGTH_SHORT).show()
+                    navController.navigate(Screen.FormBaru.route)
                 }
             ) {
                 Icon(
@@ -133,6 +136,6 @@ fun ListItem(catatan: Catatan, onClick: () -> Unit) {
 @Composable
 fun ScreenPreview() {
     Mobpro1Theme {
-        MainScreen()
+        MainScreen(rememberNavController())
     }
 }

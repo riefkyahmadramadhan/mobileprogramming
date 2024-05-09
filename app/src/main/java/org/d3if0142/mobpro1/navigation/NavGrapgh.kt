@@ -16,10 +16,10 @@ fun SetupNavGrapgh(navController: NavHostController = rememberNavController()) {
         startDestination = Screen.Home.route
     ){
         composable(route = Screen.Home.route){
-            MainScreen()
+            MainScreen(navController)
         }
         composable(route = Screen.FormBaru.route){
-            DetailScreen()
+            DetailScreen(navController)
         }
     }
 }

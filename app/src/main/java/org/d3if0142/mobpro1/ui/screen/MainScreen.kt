@@ -1,8 +1,6 @@
 package org.d3if0142.mobpro1.ui.screen
 
 import android.content.res.Configuration
-import android.graphics.drawable.Icon
-import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -44,7 +42,6 @@ import org.d3if0142.mobpro1.ui.theme.Mobpro1Theme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(navController: NavHostController) {
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -69,16 +66,15 @@ fun MainScreen(navController: NavHostController) {
             }
         }
     ) { padding ->
-        ScreenContent(Modifier.padding(padding))
+        ScreenContent(Modifier.padding(padding), navController)
 
     }
 }
 
 @Composable
-fun ScreenContent(modifier: Modifier) {
+fun ScreenContent(modifier: Modifier, navController: NavHostController) {
     val viewModel: MainViewModel = viewModel()
     val data = viewModel.data
-    val context = LocalContext.current
 
     if (data.isEmpty()) {
         Column (
@@ -97,8 +93,7 @@ fun ScreenContent(modifier: Modifier) {
         ) {
             items(data) {
                 ListItem(catatan = it){
-                    val pesan = context.getString(R.string.x_diklik, it.judul)
-                    Toast.makeText(context, pesan, Toast.LENGTH_SHORT).show()
+                    navController.navigate(Screen.FormUbah.withId(it.id))
                 }
                 Divider()
             }
